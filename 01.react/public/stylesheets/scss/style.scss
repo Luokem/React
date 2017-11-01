@@ -1,0 +1,30 @@
+@mixin body{
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+#example {
+  @include body;
+}
+
+
+body {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+#example {
+  @extend body;
+}
+
+%body {
+  font-size: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+#example {
+  @extend %body;
+}

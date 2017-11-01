@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<%- include header %>
+  <body>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <div id="example">333</div>
+  <script type="text/babel">
+    const Input = React.createClass ({
+
+      getInitialState: function() {
+        return {
+          password1:"",
+          password2: "",
+        }
+      },
+      handler1: function(event) {
+        this.setState({ password1: event.target.value});
+      },
+      handler2: function(event) {
+        this.setState({ password2: event.target.value});
+      },
+      render: function() {
+        var text = "";
+        var password1 = this.state.password1;
+        var password2 = this.state.password2;
+
+        if(password1 === password2 && password1) {
+           text = "输入正确!";
+        }
+        else if (password1 !== password2 && password1 && password2){
+          text = "输入错误!"
+        }
+        return (
+          <div>
+            <p>请输入密码:<input type="text" onChange={this.handler1} /></p>
+            <p>请再次确认:<input type="text" onChange={this.handler2} /></p>
+            <p>{text}</p>
+          </div>
+        )
+      },
+    });
+
+   ReactDOM.render(
+     <Input  />,
+     document.getElementById('example'));
+
+
+  </script>
+
+  </body>
+</html>

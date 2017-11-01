@@ -2,45 +2,28 @@
 <html>
 <%- include header %>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-    <div id="example">333</div>
+    <div id="example" >444</div>
   <script type="text/babel">
-    const Input = React.createClass ({
-
+    const MouseMove = React.createClass( {
       getInitialState: function() {
-        return {
-          password1:"",
-          password2: "",
-        }
+        return {x: 0, y: 0};
       },
-      handler1: function(event) {
-        this.setState({ password1: event.target.value});
-      },
-      handler2: function(event) {
-        this.setState({ password2: event.target.value});
+
+      handler: function(event) {
+        this.setState({x: event.pageX, y: event.pageY});
       },
       render: function() {
-        var text = "1111";
-        var password1 = this.state.password1;
-        var password2 = this.state.password2;
-
-        if(password1 === password2 && password1) {
-           text = "输入正确!";
-        }
         return (
-          <div>
-            <p>请输入密码:<input type="text" onChange={this.handler1} /></p>
-            <p>请再次确认:<input type="text" onChange={this.handler2} /></p>
-            <p>{text}</p>
+          <div onMouseMove={this.handler} style={{width: '100%', height: '500px', backgroundColor: 'gray', color: '#fff'}}>
+            <h1>{"横坐标:" + this.state.x + "纵坐标:" + this.state.y}</h1>
           </div>
         )
       },
     });
 
    ReactDOM.render(
-     <Input  />,
-     document.getElementById('example'));
+     <MouseMove  />,
+     document.getElementById("example"));
 
 
   </script>
