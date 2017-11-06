@@ -4,28 +4,22 @@
   <body>
     <div id="example" >444</div>
   <script type="text/babel">
-    const MouseMove = React.createClass( {
-      getInitialState: function() {
-        return {x: 0, y: 0};
-      },
 
-      handler: function(event) {
-        this.setState({x: event.pageX, y: event.pageY});
-      },
-      render: function() {
-        return (
-          <div onMouseMove={this.handler} style={{width: '100%', height: '500px', backgroundColor: 'gray', color: '#fff'}}>
-            <h1>{"横坐标:" + this.state.x + "纵坐标:" + this.state.y}</h1>
-          </div>
-        )
-      },
-    });
+  const Dianzan = React.createClass({
+    render: function() {
+      return (
+        <div>
+            <button>
+                <span className="N"></span>
+            </button>
+        </div>
+      )
+    }
+  });
 
    ReactDOM.render(
-     <MouseMove  />,
+     <Dianzan  />,
      document.getElementById("example"));
-
-
   </script>
 
   </body>
