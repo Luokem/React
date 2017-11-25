@@ -1,0 +1,23 @@
+body {
+  margin: 0 50px;
+}
+
+%one {
+  width: 100px;
+}
+
+%two {
+  height: 100px;
+}
+
+$color: blue;
+@mixin colorGroup ($color: red) {
+  color: $color;
+}
+
+
+.three {
+  @extend %one;
+  @extend  %two;
+  @include colorGroup;
+}

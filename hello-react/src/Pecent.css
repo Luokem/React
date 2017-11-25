@@ -1,0 +1,17 @@
+body {
+  margin: 0; }
+
+.wrapper {
+  width: 500px;
+  border: 1px solid #939393;
+  padding: 20px; }
+
+.comment {
+  margin: 10px;
+  color: blue; }
+  .comment input {
+    margin-left: 50px;
+    width: 200px;
+    height: 20px; }
+
+/*# sourceMappingURL=Pecent.css.map */
